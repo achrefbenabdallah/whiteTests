@@ -21,6 +21,24 @@ public class WhiteTestService {
 		
 		//List<Student>students=new ArrayList<Student>();
 		
+		List<String> Mismatch= wtResponse.getCriteriaMismatch();
+
+		
+		if((studentRequest.getStudentId()==0)|| (studentRequest.getStudentId()<0)){
+			Mismatch.add("Student Id is wrong !");
+		}
+		if(studentRequest.getExamCode()=="") {
+			Mismatch.add("Code Exam is empty!");
+		}
+		if(Mismatch.isEmpty()) {
+			//wtResponse.setStudent(value);
+			//wtResponse.setExam(value);
+			//wtResponse.setDate(value);
+		}
+		else
+		{
+			wtResponse.setIsValid(false);
+		}
 		
 		return wtResponse;
 	}
