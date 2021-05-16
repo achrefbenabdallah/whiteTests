@@ -96,14 +96,14 @@ public class WhiteTestService {
 		if(studentRequest.getStudentId()==0 || studentRequest.getStudentId()<0 || !(testId)) {
 			mismatchs.add("wrong student id");
 		}
-		if(studentRequest.getExamCode().isEmpty()) {
+		else if(studentRequest.getExamCode().isEmpty()) {
 			mismatchs.add("exam code must be not empty");
 		}
-		if(!(testCode))
+		else if(!(testCode))
 		{
 			mismatchs.add("wrong exam code");
 		}
-		if(mismatchs.isEmpty()) {
+		else if(mismatchs.isEmpty()) {
 			Student student = new Student();
 			student.setId(studentRequest.getStudentId());
 			student.setName(students.get(id).getName());
