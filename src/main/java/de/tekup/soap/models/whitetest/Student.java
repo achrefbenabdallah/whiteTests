@@ -2,7 +2,7 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.2.7 
 // Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2021.05.08 à 01:13:14 AM WAT 
+// Généré le : 2021.05.16 à 03:19:25 PM WAT 
 //
 
 
@@ -47,7 +47,7 @@ public class Student {
     @XmlElement(required = true)
     protected String name;
     @XmlElement(required = true)
-    protected String address;
+    protected Address address;
 
     /**
      * Obtient la valeur de la propriété id.
@@ -97,20 +97,20 @@ public class Student {
      *     {@link String }
      *     
      */
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
     /**
      * Définit la valeur de la propriété address.
      * 
-     * @param value
+     * @param a
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAddress(String value) {
-        this.address = value;
+    public void setAddress(Address a) {
+        this.address = a;
     }
 
 }
