@@ -2,11 +2,14 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.2.7 
 // Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2021.05.16 à 03:19:25 PM WAT 
+// Généré le : 2021.05.17 à 12:28:37 AM WAT 
 //
 
 
 package de.tekup.soap.models.whitetest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -92,6 +95,17 @@ public class Exam {
      */
     public void setName(String value) {
         this.name = value;
+    }
+    
+    public List<Exam> getAllExams() {
+        List<Exam> exams = new ArrayList<>();
+        for (int i=1; i<11;i++) {
+        Exam e = new Exam();
+        e.setCode("Exam"+i);
+        e.setName("OCA");
+        exams.add(e);
+        }
+        return exams;
     }
 
 }

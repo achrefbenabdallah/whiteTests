@@ -2,11 +2,14 @@
 // Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.2.7 
 // Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2021.05.16 à 03:19:25 PM WAT 
+// Généré le : 2021.05.17 à 12:28:37 AM WAT 
 //
 
 
 package de.tekup.soap.models.whitetest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -26,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="address" type="{http://www.tekup.de/soap/models/whitetest}Address"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -94,7 +97,7 @@ public class Student {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Address }
      *     
      */
     public Address getAddress() {
@@ -104,13 +107,29 @@ public class Student {
     /**
      * Définit la valeur de la propriété address.
      * 
-     * @param a
+     * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Address }
      *     
      */
-    public void setAddress(Address a) {
-        this.address = a;
+    public void setAddress(Address value) {
+        this.address = value;
+    }
+    
+    public List<Student> getAllStudents() {
+        List<Student> students = new ArrayList<>();
+        for (int i=1; i<11;i++) {
+        Student s = new Student();
+        s.setId(i);
+        s.setName("Student Number"+i);
+        Address a = new Address();
+        a.setCity("City Number"+i);
+        a.setPosteCode(1140+i);
+        a.setStreet("zan9a 3dad"+i);
+        s.setAddress(a);
+        students.add(s);
+        }
+        return students;
     }
 
 }
